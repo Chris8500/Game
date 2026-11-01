@@ -1,0 +1,17 @@
+Built-in image_gen; transparent_background=true.
+
+Handgezeichnete Bewegungsstudie einer erwachsenen Noir-Spielfigur: brauner Fedora, langer brauner Trenchcoat, dunkle Hose und Lederschuhe. Feine Tuschekonturen, gedeckte Gouache-Farben in Braun und Anthrazit, realistische menschliche Proportionen, sorgfältig gezeichnete Stofftexturen im 1920er-Noir-Stil.
+
+Erstelle acht aufeinanderfolgende Einzelbilder in einem Raster aus vier Spalten und zwei Reihen. Sprite-Sheet im Querformat 1536 × 1024, jedes Bildfeld 384 × 512. Die Figur steht im Seitenprofil nach rechts. Füße, Körpergröße und Position bleiben über alle Bilder gleich. Vollständige Figur, gleiche Bodenlinie, ausreichend transparenter Abstand zwischen den Figuren.
+
+Bewegungsfolge in Leserichtung:
+1. Beide Hände ruhen vor dem Oberkörper.
+2. Die Hände werden langsam zur Körpermitte abgesenkt.
+3. Der Blick folgt den Händen nach unten.
+4. Eine Hand greift zur Manteltasche.
+5. Diese Hand kehrt zur anderen Hand zurück.
+6. Die Finger richten ruhig die gegenüberliegende Manschette.
+7. Beide Hände lösen sich voneinander.
+8. Die Figur kehrt zur Ausgangshaltung zurück.
+
+Natürliche Schulter-, Ellbogen- und Handbewegungen, anatomisch glaubwürdige Finger und konsistente Kleidung. Sichtbar verschiedene Stadien der Bewegung, ruhige stabile Beine. Keine Waffen oder Munition, keine weiteren Personen und keine Actioneffekte. ECHT transparenter Hintergrund ohne Schattenfläche, Beschriftungen oder Rasterlinien. Jede Figur vollständig innerhalb ihres Bildfeldes.

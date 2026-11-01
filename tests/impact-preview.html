@@ -1,0 +1,25 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><base href="../"><title>Einschläge – Sichtprüfung</title>
+<style>body{background:#17201d;color:#e9dfc9;font:16px system-ui;margin:24px}h1{font-size:24px}#gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}figure{margin:0;border:1px solid #626b5c;background:#28312b}canvas{display:block;width:100%;height:auto}figcaption{padding:12px}#fixture{display:none}small{color:#adb8aa}</style></head>
+<body><h1>Schüsse: Flug, Hintergrund und Silhouette</h1><p>Originale Spielsimulation und Darstellung. Für die Sichtprüfung ist der Zufallspunkt jeweils auf die Kreismitte gesetzt.</p><div id="gallery">Bilder laden …</div><div id="fixture"><canvas id="game" width="1536" height="1024"></canvas></div>
+<script>window.requestAnimationFrame=()=>0;for(const id of ['overlay','pause','overlay-kicker','overlay-title','overlay-copy','start','restart','reload','sound','load-status','health','health-bar','wave','ammo','reload-status','score','message']){const el=document.createElement('button');el.id=id;document.getElementById('fixture').append(el);}</script>
+<script src="src/enemy-hit-masks.js"></script><script src="src/engine.js"></script><script src="src/game.js"></script>
+<script>
+function previewImpacts(){
+ const gallery=document.getElementById('gallery');gallery.replaceChildren();
+ for(const sample of [
+  {label:'Flug zum festen Einschlagspunkt',x:1150,y:700,flight:true},
+  {label:'Hintergrund: Staub und Einschlagspur · 0 Punkte',x:1150,y:700},
+  {label:'Figur getroffen: goldene Kreuzmarkierung · 100 Punkte',x:1000,y:730,after:.2},
+  {label:'Zwischen den Beinen: Hintergrund · 0 Punkte',x:1000,y:820}
+ ]){
+  E.start(state);state.spawnIn=100;Object.assign(state.player,{aimX:sample.x,aimY:sample.y,aiming:true,aimBlend:1,steady:1});
+  state.enemies=[{id:1,x:1000,hp:2,facing:-1,phase:0,attack:100,hit:0}];
+  E.fire(state,()=>0);const shot=state.playerShots[0],input={aim:true,aimX:sample.x,aimY:sample.y};
+  if(sample.flight){while(shot.age<shot.duration*.45)E.update(state,input,.01);}
+  else{while(state.playerShots.length)E.update(state,input,.01);for(let time=0;time<(sample.after||.1);time+=.05)E.update(state,input,.05);}
+  draw();const figure=document.createElement('figure'),copy=document.createElement('canvas'),caption=document.createElement('figcaption');
+  copy.width=650;copy.height=350;copy.getContext('2d').drawImage(canvas,600,540,650,350,0,0,650,350);caption.textContent=sample.label;figure.append(copy,caption);gallery.append(figure);
+ }
+}
+function awaitImpacts(){if(ready)previewImpacts();else setTimeout(awaitImpacts,50);}awaitImpacts();
+</script></body></html>

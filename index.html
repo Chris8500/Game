@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111513"><title>Nachtschicht · Ein Noir-Shooter</title><link rel="stylesheet" href="style.css"><script defer src="src/enemy-hit-masks.js"></script><script defer src="src/engine.js"></script><script defer src="src/game.js"></script></head>
+<body><main>
+  <header><a class="brand" href="./"><span class="seal">N</span><span>NACHTSCHICHT<small>EIN NOIR-SHOOTER</small></span></a><span class="edition">SPIELBARER PROTOTYP <i>01</i></span></header>
+  <section class="intro"><div><p class="eyebrow">DIE STADT SCHLÄFT. DU NICHT.</p><h1>Die letzte Straße.</h1></div><p>Drei Wellen. Zwei Patronen.<br>Und kein Weg zurück.</p></section>
+  <section class="stage" aria-label="Spielfeld">
+    <canvas id="game" width="1536" height="1024" tabindex="0" aria-label="2D-Shooter. A und D bewegen, Leertaste springen, S halten zum Ducken, Maus zielen, Linksklick schießen, Rechtsklick halten zum Anlegen, R nachladen, P pausieren."></canvas>
+    <div class="hud"><div><span class="label">GESUNDHEIT</span><span id="health">100</span><div class="health-track"><div id="health-bar"></div></div></div><div class="hud-center"><span class="label">STRASSE 01</span><span id="wave">WELLE 1 / 3</span></div><div class="ammo-box"><span class="label">DOPPELLAUF</span><span id="ammo">● ●</span><small id="reload-status">2 / 2 PATRONEN</small></div></div>
+    <div id="overlay" class="overlay"><p class="eyebrow" id="overlay-kicker">1920 · NACH MITTERNACHT</p><h2 id="overlay-title">Nachtschicht</h2><p id="overlay-copy">Halte die Straße gegen drei Gegnerwellen.<br>Der Einschlag liegt zufällig im Fadenkreis. Nur die Figur zählt.<br>Rechtsklick halten, ruhig zielen und ducken verkleinert den Kreis.</p><button id="start" class="primary" disabled>Bilder werden geladen …</button><span id="load-status" role="status"></span></div>
+    <div class="stage-bottom"><span id="message" role="status">EINSATZBEREIT</span><span id="score">0000 PUNKTE</span></div>
+  </section>
+  <nav class="controls" aria-label="Spielsteuerung"><div class="touch-controls"><button data-action="left" aria-label="Links bewegen">←</button><button data-action="right" aria-label="Rechts bewegen">→</button><button data-action="fire">Schießen</button><button id="reload">Nachladen</button><button data-action="jump">Springen</button><button data-action="crouch">Ducken halten</button><button data-action="aim">Anlegen halten</button></div><div class="utilities"><button id="sound" aria-pressed="false">Ton aus</button><button id="pause">Pause</button><button id="restart">Neustart</button></div></nav>
+  <section class="instructions"><p><kbd>A</kbd> <kbd>D</kbd> Bewegen <span>·</span> <kbd>LEER</kbd> Springen <span>·</span> <kbd>R</kbd> Nachladen <span>·</span> <kbd>S / STRG</kbd> Ducken halten <span>·</span> <kbd>P</kbd> Pause</p><p>Maus: Zielen · Linksklick: Schießen · Rechtsklick halten: Anlegen. Nachladen: 4 Sekunden.</p><p>Einschläge verteilen sich im Fadenkreis. Kleiner Kreis = höhere Trefferchance. Grauer Staub: Fehlschuss im Hintergrund. Goldene Kreuzmarkierung: Treffer.</p></section>
+  <footer><span>HANDGEZEICHNETE NOIR-WELT</span><span>Kapitel 01 <b> / </b> Der Anfang</span></footer>
+</main></body></html>

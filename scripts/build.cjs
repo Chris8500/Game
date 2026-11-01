@@ -1,0 +1,1 @@
+const fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),out=path.join(root,'dist');fs.mkdirSync(out,{recursive:true});for(const file of ['index.html','style.css','src','assets'])fs.cpSync(path.join(root,file),path.join(out,file),{recursive:true});console.log('Static build ready: dist/');
